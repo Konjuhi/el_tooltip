@@ -55,28 +55,28 @@ class Arrow extends StatelessWidget {
         scaleY = -1;
         isArrow = true;
         break;
-      case ElTooltipPosition.leftStart:
-        scaleY = -1;
-        quarterTurns = 3;
-        break;
+    // case ElTooltipPosition.leftStart:
+    //   scaleY = -1;
+    //   quarterTurns = 3;
+    //   break;
       case ElTooltipPosition.leftCenter:
         quarterTurns = 3;
         isArrow = true;
         break;
-      case ElTooltipPosition.leftEnd:
-        quarterTurns = 3;
-        break;
-      case ElTooltipPosition.rightStart:
-        quarterTurns = 1;
-        break;
+    // case ElTooltipPosition.leftEnd:
+    //   quarterTurns = 3;
+    //   break;
+    // case ElTooltipPosition.rightStart:
+    //   quarterTurns = 1;
+    //   break;
       case ElTooltipPosition.rightCenter:
         quarterTurns = 1;
         isArrow = true;
         break;
-      case ElTooltipPosition.rightEnd:
-        quarterTurns = 1;
-        scaleY = -1;
-        break;
+    // case ElTooltipPosition.rightEnd:
+    //   quarterTurns = 1;
+    //   scaleY = -1;
+    //   break;
     }
 
     return Transform.scale(

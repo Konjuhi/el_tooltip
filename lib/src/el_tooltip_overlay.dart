@@ -25,49 +25,19 @@ class ElTooltipOverlay extends StatefulWidget {
     required this.disappearAnimationDuration,
   });
 
-  /// [child] Widget that will trigger the tooltip to appear.
   final Widget child;
-
-  /// [color] Background color of the tooltip and the arrow.
   final Color color;
-
-  /// [content] Widget that appears inside the tooltip.
   final Widget content;
-
-  /// [padding] Space inside the tooltip - around the content.
   final EdgeInsetsGeometry padding;
-
-  /// [showModal] Shows a dark layer behind the tooltip.
   final bool showModal;
-
-  /// [showArrow] Shows an arrow pointing to the trigger.
   final bool showArrow;
-
-  /// [showChildAboveOverlay] Shows the child above the overlay.
   final bool showChildAboveOverlay;
-
-  /// [modalConfiguration] Configures the [Modal] widget
-  /// Only used if [showModal] is true
   final ModalConfiguration modalConfiguration;
-
-  /// [toolTipElementsDisplay] Contains the position of the tooltip, the arrow and the trigger
   final ToolTipElementsDisplay toolTipElementsDisplay;
-
-  /// [hideOverlay] Function that hides the overlay
   final VoidCallback hideOverlay;
-
-  /// [triggerBox] Box that contains the trigger
   final ElementBox triggerBox;
-
-  /// [arrowBox] Box that contains the arrow
   final ElementBox arrowBox;
-
-  /// [appearAnimationDuration] Duration of the appear animation of the modal
-  /// The default value is 0 which means it doesn't animate
   final Duration appearAnimationDuration;
-
-  /// [disappearAnimationDuration] Duration of the disappear animation of the modal
-  /// The default value is 0 which means it doesn't animate
   final Duration disappearAnimationDuration;
 
   @override
@@ -102,6 +72,30 @@ class ElTooltipOverlayState extends State<ElTooltipOverlay> {
 
   @override
   Widget build(BuildContext context) {
+    // Determine the x-offset based on the position
+    double bubbleXOffset = widget.toolTipElementsDisplay.bubble.x;
+    double arrowXOffset = widget.toolTipElementsDisplay.arrow.x;
+
+    // Adjust offsets based on the tooltip position
+    switch (widget.toolTipElementsDisplay.position) {
+      case ElTooltipPosition.topStart:
+        bubbleXOffset -= 15;
+        arrowXOffset -= 15;
+        break;
+      case ElTooltipPosition.bottomStart:
+        bubbleXOffset -= 9;
+        arrowXOffset -= 9;
+        break;
+      case ElTooltipPosition.topEnd:
+      case ElTooltipPosition.bottomEnd:
+        bubbleXOffset += 15;
+        arrowXOffset += 15;
+        break;
+      default:
+      // No additional offset for other positions
+        break;
+    }
+
     return AnimatedOpacity(
       opacity: opacity,
       duration: closing
@@ -117,7 +111,7 @@ class ElTooltipOverlayState extends State<ElTooltipOverlay> {
           ),
           Positioned(
             top: widget.toolTipElementsDisplay.bubble.y,
-            left: widget.toolTipElementsDisplay.bubble.x,
+            left: bubbleXOffset,
             child: Bubble(
               triggerBox: widget.triggerBox,
               padding: widget.padding,
@@ -129,7 +123,7 @@ class ElTooltipOverlayState extends State<ElTooltipOverlay> {
           if (widget.showArrow)
             Positioned(
               top: widget.toolTipElementsDisplay.arrow.y,
-              left: widget.toolTipElementsDisplay.arrow.x,
+              left: arrowXOffset,
               child: Arrow(
                 color: widget.color,
                 position: widget.toolTipElementsDisplay.position,

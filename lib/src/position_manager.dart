@@ -171,30 +171,30 @@ class PositionManager {
     );
   }
 
-  ToolTipElementsDisplay _leftStart() {
-    return ToolTipElementsDisplay(
-      arrow: ElementBox(
-        w: overlayBox.w,
-        h: overlayBox.h,
-        x: (triggerBox.x - overlayBox.x - distance - arrowBox.h)
-            .floorToDouble(),
-        y: triggerBox.y + _half(triggerBox.h),
-      ),
-      bubble: ElementBox(
-        w: overlayBox.w,
-        h: overlayBox.h,
-        x: triggerBox.x - overlayBox.x - overlayBox.w - distance - arrowBox.h,
-        y: triggerBox.y + _half(triggerBox.h),
-      ),
-      position: ElTooltipPosition.leftStart,
-      radius: BorderRadius.only(
-        topLeft: radius,
-        topRight: Radius.zero,
-        bottomLeft: radius,
-        bottomRight: radius,
-      ),
-    );
-  }
+  // ToolTipElementsDisplay _leftStart() {
+  //   return ToolTipElementsDisplay(
+  //     arrow: ElementBox(
+  //       w: overlayBox.w,
+  //       h: overlayBox.h,
+  //       x: (triggerBox.x - overlayBox.x - distance - arrowBox.h)
+  //           .floorToDouble(),
+  //       y: triggerBox.y + _half(triggerBox.h),
+  //     ),
+  //     bubble: ElementBox(
+  //       w: overlayBox.w,
+  //       h: overlayBox.h,
+  //       x: triggerBox.x - overlayBox.x - overlayBox.w - distance - arrowBox.h,
+  //       y: triggerBox.y + _half(triggerBox.h),
+  //     ),
+  //     position: ElTooltipPosition.leftStart,
+  //     radius: BorderRadius.only(
+  //       topLeft: radius,
+  //       topRight: Radius.zero,
+  //       bottomLeft: radius,
+  //       bottomRight: radius,
+  //     ),
+  //   );
+  // }
 
   ToolTipElementsDisplay _leftCenter() {
     return ToolTipElementsDisplay(
@@ -217,62 +217,62 @@ class PositionManager {
     );
   }
 
-  ToolTipElementsDisplay _leftEnd() {
-    return ToolTipElementsDisplay(
-      arrow: ElementBox(
-        w: overlayBox.w,
-        h: overlayBox.h,
-        x: (triggerBox.x - overlayBox.x - distance - arrowBox.h)
-            .floorToDouble(),
-        y: (triggerBox.y + _half(triggerBox.h) - arrowBox.w).floorToDouble(),
-      ),
-      bubble: ElementBox(
-        w: overlayBox.w,
-        h: overlayBox.h,
-        x: triggerBox.x - overlayBox.x - overlayBox.w - distance - arrowBox.h,
-        y: triggerBox.y + _half(triggerBox.h) - overlayBox.h,
-      ),
-      position: ElTooltipPosition.leftEnd,
-      radius: BorderRadius.only(
-        topLeft: radius,
-        topRight: radius,
-        bottomLeft: radius,
-        bottomRight: Radius.zero,
-      ),
-    );
-  }
+  // ToolTipElementsDisplay _leftEnd() {
+  //   return ToolTipElementsDisplay(
+  //     arrow: ElementBox(
+  //       w: overlayBox.w,
+  //       h: overlayBox.h,
+  //       x: (triggerBox.x - overlayBox.x - distance - arrowBox.h)
+  //           .floorToDouble(),
+  //       y: (triggerBox.y + _half(triggerBox.h) - arrowBox.w).floorToDouble(),
+  //     ),
+  //     bubble: ElementBox(
+  //       w: overlayBox.w,
+  //       h: overlayBox.h,
+  //       x: triggerBox.x - overlayBox.x - overlayBox.w - distance - arrowBox.h,
+  //       y: triggerBox.y + _half(triggerBox.h) - overlayBox.h,
+  //     ),
+  //     position: ElTooltipPosition.leftEnd,
+  //     radius: BorderRadius.only(
+  //       topLeft: radius,
+  //       topRight: radius,
+  //       bottomLeft: radius,
+  //       bottomRight: Radius.zero,
+  //     ),
+  //   );
+  // }
 
-  ToolTipElementsDisplay _rightStart() {
-    return ToolTipElementsDisplay(
-      arrow: ElementBox(
-        w: overlayBox.w,
-        h: overlayBox.h,
-        x: (triggerBox.x + triggerBox.w + distance).floorToDouble(),
-        y: (triggerBox.y + _half(triggerBox.h)).floorToDouble(),
-      ),
-      bubble: ElementBox(
-        w: overlayBox.w,
-        h: overlayBox.h,
-        x: (triggerBox.x + triggerBox.w + distance + arrowBox.h)
-            .floorToDouble(),
-        y: (triggerBox.y + _half(triggerBox.h)).floorToDouble(),
-      ),
-      position: ElTooltipPosition.rightStart,
-      radius: BorderRadius.only(
-        topLeft: Radius.zero,
-        topRight: radius,
-        bottomLeft: radius,
-        bottomRight: radius,
-      ),
-    );
-  }
+  // ToolTipElementsDisplay _rightStart() {
+  //   return ToolTipElementsDisplay(
+  //     arrow: ElementBox(
+  //       w: overlayBox.w,
+  //       h: overlayBox.h,
+  //       x: (triggerBox.x + triggerBox.w + distance).floorToDouble(),
+  //       y: (triggerBox.y + _half(triggerBox.h)).floorToDouble(),
+  //     ),
+  //     bubble: ElementBox(
+  //       w: overlayBox.w,
+  //       h: overlayBox.h,
+  //       x: (triggerBox.x + triggerBox.w + distance + arrowBox.h)
+  //           .floorToDouble(),
+  //       y: (triggerBox.y + _half(triggerBox.h)).floorToDouble(),
+  //     ),
+  //     position: ElTooltipPosition.rightStart,
+  //     radius: BorderRadius.only(
+  //       topLeft: Radius.zero,
+  //       topRight: radius,
+  //       bottomLeft: radius,
+  //       bottomRight: radius,
+  //     ),
+  //   );
+  // }
 
   ToolTipElementsDisplay _rightCenter() {
     return ToolTipElementsDisplay(
       arrow: ElementBox(
         w: overlayBox.w,
         h: overlayBox.h,
-        x: (triggerBox.x + triggerBox.w + distance).floorToDouble(),
+        x: (triggerBox.x + triggerBox.w + distance).floorToDouble()+1,
         y: (triggerBox.y + _half(triggerBox.h) - _half(arrowBox.w))
             .floorToDouble(),
       ),
@@ -287,29 +287,29 @@ class PositionManager {
     );
   }
 
-  ToolTipElementsDisplay _rightEnd() {
-    return ToolTipElementsDisplay(
-      arrow: ElementBox(
-        w: overlayBox.w,
-        h: overlayBox.h,
-        x: (triggerBox.x + triggerBox.w + distance).floorToDouble(),
-        y: triggerBox.y + _half(triggerBox.h) - arrowBox.w,
-      ),
-      bubble: ElementBox(
-        w: overlayBox.w,
-        h: overlayBox.h,
-        x: triggerBox.x + triggerBox.w + distance + arrowBox.h,
-        y: triggerBox.y + _half(triggerBox.h) - overlayBox.h,
-      ),
-      position: ElTooltipPosition.rightEnd,
-      radius: BorderRadius.only(
-        topLeft: radius,
-        topRight: radius,
-        bottomLeft: Radius.zero,
-        bottomRight: radius,
-      ),
-    );
-  }
+  // ToolTipElementsDisplay _rightEnd() {
+  //   return ToolTipElementsDisplay(
+  //     arrow: ElementBox(
+  //       w: overlayBox.w,
+  //       h: overlayBox.h,
+  //       x: (triggerBox.x + triggerBox.w + distance).floorToDouble(),
+  //       y: triggerBox.y + _half(triggerBox.h) - arrowBox.w,
+  //     ),
+  //     bubble: ElementBox(
+  //       w: overlayBox.w,
+  //       h: overlayBox.h,
+  //       x: triggerBox.x + triggerBox.w + distance + arrowBox.h,
+  //       y: triggerBox.y + _half(triggerBox.h) - overlayBox.h,
+  //     ),
+  //     position: ElTooltipPosition.rightEnd,
+  //     radius: BorderRadius.only(
+  //       topLeft: radius,
+  //       topRight: radius,
+  //       bottomLeft: Radius.zero,
+  //       bottomRight: radius,
+  //     ),
+  //   );
+  // }
 
   double _half(double size) {
     return size * 0.5;
@@ -334,10 +334,10 @@ class PositionManager {
       _rightCenter,
       _topStart,
       _topEnd,
-      _leftStart,
-      _rightStart,
-      _leftEnd,
-      _rightEnd,
+      // _leftStart,
+      // _rightStart,
+      // _leftEnd,
+      // _rightEnd,
       _bottomStart,
       _bottomEnd,
     ];
@@ -370,24 +370,24 @@ class PositionManager {
       case ElTooltipPosition.bottomEnd:
         elementPosition = _bottomEnd();
         break;
-      case ElTooltipPosition.leftStart:
-        elementPosition = _leftStart();
-        break;
+    // case ElTooltipPosition.leftStart:
+    //   elementPosition = _leftStart();
+    //   break;
       case ElTooltipPosition.leftCenter:
         elementPosition = _leftCenter();
         break;
-      case ElTooltipPosition.leftEnd:
-        elementPosition = _leftEnd();
-        break;
-      case ElTooltipPosition.rightStart:
-        elementPosition = _rightStart();
-        break;
+    // case ElTooltipPosition.leftEnd:
+    //   elementPosition = _leftEnd();
+    //   break;
+    // case ElTooltipPosition.rightStart:
+    //   elementPosition = _rightStart();
+    //   break;
       case ElTooltipPosition.rightCenter:
         elementPosition = _rightCenter();
         break;
-      case ElTooltipPosition.rightEnd:
-        elementPosition = _rightEnd();
-        break;
+    // case ElTooltipPosition.rightEnd:
+    //   elementPosition = _rightEnd();
+    //   break;
       default:
         elementPosition = _topCenter();
         break;
