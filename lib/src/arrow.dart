@@ -32,6 +32,7 @@ class Arrow extends StatelessWidget {
 
     switch (position) {
       case ElTooltipPosition.topStart:
+        isArrow = true;
         break;
       case ElTooltipPosition.topCenter:
         quarterTurns = 0;
@@ -39,9 +40,11 @@ class Arrow extends StatelessWidget {
         break;
       case ElTooltipPosition.topEnd:
         scaleX = -1;
+        isArrow = true;
         break;
       case ElTooltipPosition.bottomStart:
         scaleY = -1;
+        isArrow = true;
         break;
       case ElTooltipPosition.bottomCenter:
         quarterTurns = 2;
@@ -50,6 +53,7 @@ class Arrow extends StatelessWidget {
       case ElTooltipPosition.bottomEnd:
         scaleX = -1;
         scaleY = -1;
+        isArrow = true;
         break;
       case ElTooltipPosition.leftStart:
         scaleY = -1;

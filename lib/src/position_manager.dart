@@ -40,7 +40,7 @@ class PositionManager {
       arrow: ElementBox(
         w: overlayBox.w,
         h: overlayBox.h,
-        x: (triggerBox.x + _half(triggerBox.w)).floorToDouble(),
+        x: (triggerBox.x + _half(triggerBox.w)).floorToDouble()+8,
         y: (triggerBox.y - distance - arrowBox.h).floorToDouble(),
       ),
       bubble: ElementBox(
@@ -53,7 +53,7 @@ class PositionManager {
       radius: BorderRadius.only(
         topLeft: radius,
         topRight: radius,
-        bottomLeft: Radius.zero,
+        bottomLeft:  Radius.circular(6.0),
         bottomRight: radius,
       ),
     );
@@ -84,7 +84,7 @@ class PositionManager {
       arrow: ElementBox(
         w: arrowBox.w,
         h: arrowBox.h,
-        x: (triggerBox.x + _half(triggerBox.w) - arrowBox.w).floorToDouble(),
+        x: (triggerBox.x + _half(triggerBox.w) - arrowBox.w).floorToDouble()-8,
         y: (triggerBox.y - distance - arrowBox.h).floorToDouble(),
       ),
       bubble: ElementBox(
@@ -98,7 +98,7 @@ class PositionManager {
         topLeft: radius,
         topRight: radius,
         bottomLeft: radius,
-        bottomRight: Radius.zero,
+        bottomRight: Radius.circular(6.0),
       ),
     );
   }
@@ -114,12 +114,12 @@ class PositionManager {
       bubble: ElementBox(
         w: overlayBox.w,
         h: overlayBox.h,
-        x: triggerBox.x + _half(triggerBox.w),
+        x: triggerBox.x + _half(triggerBox.w)-8,
         y: triggerBox.y + triggerBox.h + distance + arrowBox.h,
       ),
       position: ElTooltipPosition.bottomStart,
       radius: BorderRadius.only(
-        topLeft: Radius.zero,
+        topLeft: Radius.circular(6.0),
         topRight: radius,
         bottomLeft: radius,
         bottomRight: radius,
@@ -152,7 +152,7 @@ class PositionManager {
       arrow: ElementBox(
         w: overlayBox.w,
         h: overlayBox.h,
-        x: (triggerBox.x + _half(triggerBox.w) - arrowBox.w),
+        x: (triggerBox.x + _half(triggerBox.w) - arrowBox.w)-8,
         y: (triggerBox.y + triggerBox.h + distance).ceilToDouble(),
       ),
       bubble: ElementBox(
@@ -164,7 +164,7 @@ class PositionManager {
       position: ElTooltipPosition.bottomEnd,
       radius: BorderRadius.only(
         topLeft: radius,
-        topRight: Radius.zero,
+        topRight: Radius.circular(6.0),
         bottomLeft: radius,
         bottomRight: radius,
       ),

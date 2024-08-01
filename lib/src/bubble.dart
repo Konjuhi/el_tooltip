@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'element_box.dart';
 
 /// Bubble serves as the tooltip container
@@ -10,6 +9,8 @@ class Bubble extends StatefulWidget {
   final ElementBox triggerBox;
   final BorderRadiusGeometry? radius;
   final Widget child;
+  final double minWidth;
+  final double minHeight;
 
   const Bubble({
     this.color = Colors.white,
@@ -18,6 +19,8 @@ class Bubble extends StatefulWidget {
     required this.child,
     required this.triggerBox,
     this.maxWidth = 300.0,
+    this.minWidth = 160.0, // Set default minWidth
+    this.minHeight = 44.0, // Set default minHeight
     super.key,
   });
 
@@ -33,13 +36,25 @@ class _BubbleState extends State<Bubble> {
       child: Opacity(
         opacity: 1.0,
         child: Container(
-          constraints: BoxConstraints(maxWidth: widget.maxWidth),
+          constraints: BoxConstraints(
+              maxWidth: widget.maxWidth,
+              minWidth: widget.minWidth,
+              minHeight: widget.minHeight,
+              maxHeight: 68
+          ),
           decoration: BoxDecoration(
             borderRadius: widget.radius,
             color: widget.color,
           ),
           padding: widget.padding,
-          child: widget.child,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              widget.child,
+            ],
+          ),
         ),
       ),
     );
