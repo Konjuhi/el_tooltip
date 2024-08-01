@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ModalConfiguration {
   const ModalConfiguration({
     this.color = Colors.black87,
-    this.opacity = 0.7,
+    this.opacity = 0.0,
   });
 
   /// [color] Background color of the fullscreen background modal
