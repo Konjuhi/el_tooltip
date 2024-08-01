@@ -31,6 +31,14 @@ void main() {
                   ElTooltip(
                     content: tooltipContent,
                     color: Color(0XFFEA4747),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0x26121620),
+                        blurRadius: 10,
+                        spreadRadius: 2,
+                        offset: Offset(0, 4),
+                      ),
+                    ],
                     child: tooltipIcon,
                   ),
                   Spacer(),

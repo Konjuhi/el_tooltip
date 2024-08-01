@@ -11,6 +11,7 @@ class Bubble extends StatefulWidget {
   final Widget child;
   final double minWidth;
   final double minHeight;
+  final List<BoxShadow>? boxShadow;
 
   const Bubble({
     this.color = Colors.white,
@@ -21,6 +22,7 @@ class Bubble extends StatefulWidget {
     this.maxWidth = 300.0,
     this.minWidth = 160.0, // Set default minWidth
     this.minHeight = 44.0, // Set default minHeight
+    this.boxShadow,
     super.key,
   });
 
@@ -45,6 +47,14 @@ class _BubbleState extends State<Bubble> {
           decoration: BoxDecoration(
             borderRadius: widget.radius,
             color: widget.color,
+            boxShadow: widget.boxShadow ?? const [
+              BoxShadow(
+                color: Color(0x26121620),
+                blurRadius: 10,
+                spreadRadius: 2,
+                offset: Offset(0, 4),
+              ),
+            ],
           ),
           padding: widget.padding,
           child: Row(

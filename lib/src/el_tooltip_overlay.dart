@@ -23,6 +23,7 @@ class ElTooltipOverlay extends StatefulWidget {
     required this.arrowBox,
     required this.appearAnimationDuration,
     required this.disappearAnimationDuration,
+    this.boxShadow,
   });
 
   final Widget child;
@@ -39,6 +40,7 @@ class ElTooltipOverlay extends StatefulWidget {
   final ElementBox arrowBox;
   final Duration appearAnimationDuration;
   final Duration disappearAnimationDuration;
+  final List<BoxShadow>? boxShadow;
 
   @override
   State<ElTooltipOverlay> createState() => ElTooltipOverlayState();
@@ -118,6 +120,7 @@ class ElTooltipOverlayState extends State<ElTooltipOverlay> {
               radius: widget.toolTipElementsDisplay.radius,
               color: widget.color,
               child: widget.content,
+              boxShadow: widget.boxShadow,
             ),
           ),
           if (widget.showArrow)
